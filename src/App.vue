@@ -40,7 +40,13 @@
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </uk-modal>
-      <uk-modal v-model="modal3" title="Header" extended footer>
+      <uk-modal
+        v-model="modal3"
+        title="Header"
+        extended
+        footer
+        :esc-close="false"
+      >
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -54,7 +60,7 @@
           <div class="uk-text-center">footer</div>
         </template>
       </uk-modal>
-      <uk-modal v-model="modal4" title="Header" center>
+      <uk-modal v-model="modal4" title="Header" center :bg-close="false">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

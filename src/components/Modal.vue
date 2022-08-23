@@ -1,5 +1,9 @@
 <template>
-  <div :class="cls" :style="{ display: open ? 'block' : '' }">
+  <div
+    :class="cls"
+    :style="{ display: open ? openStyle : '' }"
+    @click.self="onBgClose"
+  >
     <div
       class="uk-modal-dialog"
       :class="{ 'uk-modal-body': !extended, 'uk-margin-auto-vertical': center }"
@@ -32,7 +36,16 @@
 
 <script setup lang="ts">
 import ukIcon from "./ukIcon";
-import { defineProps, Ref, ref, watch } from "vue";
+import {
+  defineProps,
+  defineEmits,
+  Ref,
+  ref,
+  watch,
+  onMounted,
+  onUnmounted,
+} from "vue";
+import { useHotKeys } from "@/utils/hotkeys";
 
 const props = defineProps({
   modelValue: Boolean,
@@ -41,10 +54,43 @@ const props = defineProps({
   footer: Boolean,
   closeOutside: Boolean,
   center: Boolean,
+  bgClose: {
+    type: Boolean,
+    default: () => true,
+  },
+  escClose: {
+    type: Boolean,
+    default: () => true,
+  },
 });
+
+const emit = defineEmits(["update:modelValue"]);
 
 const cls: Ref = ref(["uk-modal"]);
 const open: Ref = ref(false);
+const openStyle: Ref = ref("block");
+const { hotKeys, runHotKeys } = useHotKeys();
+
+if (props.center) openStyle.value = "flex";
+
+const onBgClose = () => {
+  if (props.bgClose) emit("update:modelValue", false);
+};
+
+hotKeys.value.push({
+  keys: ["Escape"],
+  callback: (event: any) => {
+    event.preventDefault();
+    if (props.escClose) emit("update:modelValue", false);
+  },
+});
+
+const onOpen = () => {
+  document.addEventListener("keydown", runHotKeys);
+};
+const onClose = () => {
+  document.removeEventListener("keydown", runHotKeys);
+};
 
 watch(
   () => props.modelValue,
@@ -59,12 +105,14 @@ watch(
           1
         );
       }, 100);
+      onOpen();
     } else {
       cls.value = ["uk-modal", "uk-togglabe-leave"];
       setTimeout(() => {
         open.value = props.modelValue;
         cls.value = ["uk-modal"];
       }, 300);
+      onClose();
     }
   }
 );
