@@ -18,63 +18,75 @@
           Center
         </uk-btn>
       </div>
-      <uk-modal v-model="modal1">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </uk-modal>
-      <uk-modal v-model="modal2" close-outside title="Header">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </uk-modal>
-      <uk-modal
-        v-model="modal3"
-        title="Header"
-        extended
-        footer
-        :esc-close="false"
-      >
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-        <template #footer>
-          <div class="uk-text-center">footer</div>
-        </template>
-      </uk-modal>
-      <uk-modal v-model="modal4" title="Header" center :bg-close="false">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </uk-modal>
-      <uk-section bg-color="primary">
-        <uk-container xsmall>Hello</uk-container>
-      </uk-section>
-      <uk-btn type="danger" to="/test"> Btn </uk-btn>
+      <div class="uk-margin-bottom">
+        <uk-modal v-model="modal1">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </uk-modal>
+        <uk-modal v-model="modal2" close-outside title="Header">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </uk-modal>
+        <uk-modal
+          v-model="modal3"
+          title="Header"
+          extended
+          footer
+          :esc-close="false"
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+          <template #footer>
+            <div class="uk-text-center">footer</div>
+          </template>
+        </uk-modal>
+        <uk-modal v-model="modal4" title="Header" center :bg-close="false">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </uk-modal>
+      </div>
+      <div class="uk-margin-bottom">
+        <uk-section bg-color="primary">
+          <uk-container xsmall>Hello</uk-container>
+        </uk-section>
+      </div>
+      <div class="uk-margin-bottom">
+        <uk-btn type="danger" to="/test"> Btn </uk-btn>
+      </div>
+      <uk-article title="Article">
+        <uk-article type="lead"> Lorem ipsum dolor sit. </uk-article>
+        <uk-article type="meta"> Lorem ipsum dolor sit 1. </uk-article>
+        Lorem ipsum dolor sit amet.
+      </uk-article>
+      <uk-badge :count="10" />
     </uk-container>
   </div>
 </template>
@@ -85,6 +97,8 @@ import ukAlert from "./components/Alert";
 import ukModal from "./components/Modal";
 import ukSection from "./components/Section";
 import ukBtn from "./components/Btn";
+import ukArticle from "./components/Article";
+import ukBadge from "./components/Badge";
 import { ref } from "vue";
 
 const modal1 = ref(false);

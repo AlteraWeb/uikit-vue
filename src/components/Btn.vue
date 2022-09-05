@@ -1,5 +1,5 @@
 <template>
-  <component :is="routerPath ? 'router-link' : 'router-link'" :to="routerPath" :class="btn">
+  <component :is="to ? 'router-link' : 'button'" :to="to" :class="btn">
     <slot />
   </component>
 </template>
@@ -9,7 +9,7 @@ import { defineProps, Ref, ref } from "vue";
 
 const btn: Ref = ref(["uk-button"]);
 const props = defineProps({
-  routerPath: {
+  to: {
     type: String,
   },
   size: {
@@ -30,11 +30,7 @@ const props = defineProps({
   },
 });
 
-if (
-  ["default", "primary", "secondary", "danger", "text", "link"].includes(
-    props.type
-  )
-) {
+if (["default", "primary", "secondary", "danger", "text", "link"].includes(props.type)) {
   btn.value.push(`uk-button-${props.type}`);
 }
 
