@@ -86,7 +86,52 @@
         <uk-article type="meta"> Lorem ipsum dolor sit 1. </uk-article>
         Lorem ipsum dolor sit amet.
       </uk-article>
-      <uk-badge :count="10" />
+      <div class="uk-margin-bottom">
+        <uk-badge :count="10" />
+      </div>
+      <div class="uk-margin-bottom">
+        <uk-column
+          class="uk-padding"
+          col-s="3"
+          col-m="4"
+          col-l="5"
+          col-xl="6"
+          divider
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+            at culpa, deserunt dignissimos eos error ex exercitationem fuga
+            impedit inventore magni minus necessitatibus nesciunt possimus
+            reiciendis rem totam ullam ut.
+          </p>
+          <uk-column-span>
+            All we have to decide is what to do with the time that is given us.
+          </uk-column-span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+            at culpa, deserunt dignissimos eos error ex exercitationem fuga
+            impedit inventore magni minus necessitatibus nesciunt possimus
+            reiciendis rem totam ullam ut.
+          </p>
+        </uk-column>
+      </div>
+      <div class="uk-margin-bottom">
+        <hr class="uk-divider-icon" />
+      </div>
+
+      <div class="uk-margin-bottom">
+        <uk-grid small row="large" column="small" child="1-5" divider>
+          <uk-width>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum,
+            officiis.
+          </uk-width>
+          <div>fdfdf</div>
+          <div>dfdfdf</div>
+          <div>aasd</div>
+          <div>aasd</div>
+          <div>11111</div>
+        </uk-grid>
+      </div>
     </uk-container>
   </div>
 </template>
@@ -99,6 +144,10 @@ import ukSection from "./components/Section";
 import ukBtn from "./components/Btn";
 import ukArticle from "./components/Article";
 import ukBadge from "./components/Badge";
+import ukColumn from "./components/Column";
+import ukColumnSpan from "./components/ColumnSpan";
+import ukGrid from "./components/Grid";
+import ukWidth from "./components/Width";
 import { ref } from "vue";
 
 const modal1 = ref(false);
