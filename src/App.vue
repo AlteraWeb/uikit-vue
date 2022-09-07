@@ -132,6 +132,9 @@
           <div>11111</div>
         </uk-grid>
       </div>
+      <div class="uk-margin-bottom">
+        <uk-countdown date="date: 17-05-2020"> </uk-countdown>
+      </div>
     </uk-container>
   </div>
 </template>
@@ -148,6 +151,7 @@ import ukColumn from "./components/Column";
 import ukColumnSpan from "./components/ColumnSpan";
 import ukGrid from "./components/Grid";
 import ukWidth from "./components/Width";
+import ukCountdown from "./components/Countdown";
 import { ref } from "vue";
 
 const modal1 = ref(false);
