@@ -133,7 +133,8 @@
         </uk-grid>
       </div>
       <div class="uk-margin-bottom">
-        <uk-countdown date="date: 17-05-2020"> </uk-countdown>
+        <uk-countdown date="2022-09-14T11:57:55+00:00">
+        </uk-countdown>
       </div>
     </uk-container>
   </div>

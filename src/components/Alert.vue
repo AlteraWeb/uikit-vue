@@ -5,7 +5,7 @@
         <uk-icon name="close" />
       </a>
     </slot>
-    <slot name="title">
+    <slot name="title" v-bind:title="title">
       <h3 v-if="title">{{ title }}</h3>
     </slot>
     <slot />
