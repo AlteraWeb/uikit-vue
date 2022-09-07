@@ -81,11 +81,13 @@
       <div class="uk-margin-bottom">
         <uk-btn type="danger" to="/test"> Btn </uk-btn>
       </div>
-      <uk-article title="Article">
-        <uk-article type="lead"> Lorem ipsum dolor sit. </uk-article>
-        <uk-article type="meta"> Lorem ipsum dolor sit 1. </uk-article>
-        Lorem ipsum dolor sit amet.
-      </uk-article>
+      <div class="uk-margin-bottom">
+        <uk-article title="Article">
+          <uk-article type="lead"> Lorem ipsum dolor sit. </uk-article>
+          <uk-article type="meta"> Lorem ipsum dolor sit 1. </uk-article>
+          Lorem ipsum dolor sit amet.
+        </uk-article>
+      </div>
       <div class="uk-margin-bottom">
         <uk-badge :count="10" />
       </div>
@@ -118,7 +120,6 @@
       <div class="uk-margin-bottom">
         <hr class="uk-divider-icon" />
       </div>
-
       <div class="uk-margin-bottom">
         <uk-grid small row="large" column="small" child="1-5" divider>
           <uk-width>
@@ -133,7 +134,7 @@
         </uk-grid>
       </div>
       <div class="uk-margin-bottom">
-        <uk-countdown date="2022-09-14T11:57:55+00:00">
+        <uk-countdown date="2022-09-14T11:57:55+00:00" separator=":">
         </uk-countdown>
       </div>
     </uk-container>
